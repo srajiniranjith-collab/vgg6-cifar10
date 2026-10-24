@@ -1,0 +1,14 @@
+# Q2(c): batch size x learning rate = 12 runs (ReLU, Adam, 30 epochs).
+program: train.py
+method: grid
+metric: {name: val_acc, goal: maximize}
+parameters:
+  batch_size: {values: [64, 128, 256, 512]}
+  lr: {values: [0.0003, 0.001, 0.003]}
+  activation: {value: relu}
+  optimizer: {value: adam}
+  epochs: {value: 30}
+  batch_norm: {value: true}
+  weight_decay: {value: 0.00005}
+  momentum: {value: 0.9}
+  seed: {value: 42}

@@ -1,0 +1,14 @@
+# Q2(c): epoch budget. 10/20/50 epochs (30 is already covered by the other sweeps).
+program: train.py
+method: grid
+metric: {name: val_acc, goal: maximize}
+parameters:
+  epochs: {values: [10, 20, 50]}
+  activation: {value: relu}
+  optimizer: {value: adam}
+  lr: {value: 0.001}
+  batch_size: {value: 128}
+  batch_norm: {value: true}
+  weight_decay: {value: 0.00005}
+  momentum: {value: 0.9}
+  seed: {value: 42}

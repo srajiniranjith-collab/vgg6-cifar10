@@ -1,0 +1,25 @@
+{
+  "config": {
+    "activation": "relu",
+    "arch": "six_layer",
+    "label_smoothing": 0.1,
+    "optimizer": "adam",
+    "lr": 0.001,
+    "momentum": 0.9,
+    "weight_decay": 5e-05,
+    "batch_size": 128,
+    "epochs": 30,
+    "batch_norm": true,
+    "cutout": true,
+    "scheduler": "none",
+    "seed": 42,
+    "val_size": 5000,
+    "data_dir": "./data",
+    "save_dir": "./checkpoints",
+    "wandb_project": "vgg6-cifar10",
+    "no_wandb": true
+  },
+  "best_val_acc": 87.22,
+  "best_epoch": 30,
+  "test_acc": 86.29
+}

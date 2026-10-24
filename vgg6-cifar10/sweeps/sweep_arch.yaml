@@ -1,0 +1,17 @@
+# Optional: architecture / regularisation upgrades (ReLU, Adam, lr 1e-3, bs 128, 30 epochs).
+# 3 archs x label smoothing {0, 0.1} = 6 runs.
+program: train.py
+method: grid
+metric: {name: val_acc, goal: maximize}
+parameters:
+  arch: {values: [template, six_layer, wide]}
+  label_smoothing: {values: [0.0, 0.1]}
+  activation: {value: relu}
+  optimizer: {value: adam}
+  lr: {value: 0.001}
+  batch_size: {value: 128}
+  epochs: {value: 30}
+  batch_norm: {value: true}
+  weight_decay: {value: 0.00005}
+  momentum: {value: 0.9}
+  seed: {value: 42}

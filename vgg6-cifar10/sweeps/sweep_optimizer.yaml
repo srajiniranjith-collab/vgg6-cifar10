@@ -1,0 +1,15 @@
+# Q2(b): 6 optimizers x 3 learning rates = 18 runs (ReLU, bs 128, 30 epochs).
+# Each optimizer gets 3 LRs because their sensible LR ranges differ by 10-100x.
+program: train.py
+method: grid
+metric: {name: val_acc, goal: maximize}
+parameters:
+  optimizer: {values: [sgd, nesterov, adam, adagrad, rmsprop, nadam]}
+  lr: {values: [0.001, 0.01, 0.1]}
+  activation: {value: relu}
+  batch_size: {value: 128}
+  epochs: {value: 30}
+  batch_norm: {value: true}
+  weight_decay: {value: 0.00005}
+  momentum: {value: 0.9}
+  seed: {value: 42}
